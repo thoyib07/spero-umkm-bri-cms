@@ -52,38 +52,44 @@ class ProductCard extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
                 maxLines: 2,
               ),
+              SizedBox(height: getProportionateScreenWidth(5)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "\Rp ${product.price}",
-                    style: TextStyle(
-                      fontSize: getProportionateScreenWidth(18),
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor,
-                    ),
+                  product.stock > 1
+                      ? Text(
+                          // "Stock : ${product.stock}",
+                          "Tersedia",
+                          style: TextStyle(
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 130, 250, 112),
+                          ),
+                        )
+                      : Text(
+                          // "Stock : ${product.stock}",
+                          "Habis",
+                          style: TextStyle(
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFFF6625E),
+                          ),
+                        ),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(50),
+                    onTap: () {},
+                    child: Container(
+                        padding: EdgeInsets.all(getProportionateScreenWidth(4)),
+                        height: getProportionateScreenWidth(18),
+                        width: getProportionateScreenWidth(60),
+                        decoration: BoxDecoration(
+                          // color: Color.fromARGB(255, 255, 255, 255),
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Text("Stock : ${product.stock}",
+                            style: TextStyle(
+                                fontSize: getProportionateScreenWidth(12)))),
                   ),
-                  // InkWell(
-                  //   borderRadius: BorderRadius.circular(50),
-                  //   onTap: () {},
-                  //   child: Container(
-                  //     padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                  //     height: getProportionateScreenWidth(28),
-                  //     width: getProportionateScreenWidth(28),
-                  //     decoration: BoxDecoration(
-                  //       color: product.isFavourite
-                  //           ? kPrimaryColor.withOpacity(0.15)
-                  //           : kSecondaryColor.withOpacity(0.1),
-                  //       shape: BoxShape.circle,
-                  //     ),
-                  //     child: SvgPicture.asset(
-                  //       "assets/icons/Heart Icon_2.svg",
-                  //       color: product.isFavourite
-                  //           ? Color(0xFFFF4848)
-                  //           : Color(0xFFDBDEE4),
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               )
             ],

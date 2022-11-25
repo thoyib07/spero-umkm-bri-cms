@@ -5,8 +5,8 @@ import 'package:umkm_bri/models/Product.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-class ColorDots extends StatelessWidget {
-  const ColorDots({
+class Picker extends StatelessWidget {
+  const Picker({
     Key? key,
     required this.product,
   }) : super(key: key);
@@ -21,19 +21,24 @@ class ColorDots extends StatelessWidget {
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ...List.generate(
-            product.colors.length,
-            (index) => ColorDot(
-              color: product.colors[index],
-              isSelected: index == selectedColor,
-            ),
-          ),
-          Spacer(),
+          // ...List.generate(
+          //   product.colors.length,
+          //   (index) => ColorDot(
+          //     color: product.colors[index],
+          //     isSelected: index == selectedColor,
+          //   ),
+          // ),
+          // Spacer(),
+          Text("Jumlah : "),
+          SizedBox(width: getProportionateScreenWidth(10)),
           RoundedIconBtn(
             icon: Icons.remove,
             press: () {},
           ),
+          SizedBox(width: getProportionateScreenWidth(20)),
+          Text("10"),
           SizedBox(width: getProportionateScreenWidth(20)),
           RoundedIconBtn(
             icon: Icons.add,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:umkm_bri/screens/cart/cart_screen.dart';
+import 'package:umkm_bri/screens/profile/profile_screen.dart';
 
 import '../../../size_config.dart';
 import 'icon_btn_with_counter.dart';
@@ -26,7 +27,7 @@ class HomeHeader extends StatelessWidget {
           ),
           IconBtnWithCounter(
             svgSrc: "assets/icons/User.svg",
-            press: () => Navigator.pushNamed(context, CartScreen.routeName),
+            press: () => Navigator.pushNamed(context, ProfileScreen.routeName),
           ),
         ],
       ),

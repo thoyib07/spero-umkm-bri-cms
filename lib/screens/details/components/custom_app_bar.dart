@@ -5,9 +5,9 @@ import 'package:umkm_bri/constants.dart';
 import '../../../size_config.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final double rating;
+  final int stock;
 
-  CustomAppBar({required this.rating});
+  CustomAppBar({required this.stock});
 
   @override
   // AppBar().preferredSize.height provide us the height that appy on our app bar
@@ -50,14 +50,12 @@ class CustomAppBar extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    "$rating",
+                    "Stock : $stock",
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(width: 5),
-                  SvgPicture.asset("assets/icons/Star Icon.svg"),
                 ],
               ),
             )
