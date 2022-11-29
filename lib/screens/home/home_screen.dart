@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:umkm_bri/components/coustom_bottom_nav_bar.dart';
 import 'package:umkm_bri/enums.dart';
 
@@ -6,6 +9,7 @@ import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

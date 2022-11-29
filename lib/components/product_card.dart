@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:umkm_bri/models/Product.dart';
@@ -19,6 +21,12 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String generateRandomString(int len) {
+      var r = Random();
+      return String.fromCharCodes(
+          List.generate(len, (index) => r.nextInt(33) + 89));
+    }
+
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: SizedBox(
@@ -41,7 +49,8 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Hero(
-                    tag: product.id.toString(),
+                    // tag: product.id.toString(),
+                    tag: generateRandomString,
                     child: Image.asset(product.images[0]),
                   ),
                 ),
@@ -80,8 +89,8 @@ class ProductCard extends StatelessWidget {
                     onTap: () {},
                     child: Container(
                         padding: EdgeInsets.all(getProportionateScreenWidth(4)),
-                        height: getProportionateScreenWidth(18),
-                        width: getProportionateScreenWidth(60),
+                        // height: getProportionateScreenWidth(18),
+                        // width: getProportionateScreenWidth(60),
                         decoration: BoxDecoration(
                           // color: Color.fromARGB(255, 255, 255, 255),
                           shape: BoxShape.rectangle,

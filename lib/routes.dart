@@ -9,12 +9,14 @@ import 'package:umkm_bri/screens/otp/otp_screen.dart';
 import 'package:umkm_bri/screens/profile/profile_screen.dart';
 import 'package:umkm_bri/screens/sign_in/sign_in_screen.dart';
 import 'package:umkm_bri/screens/splash/splash_screen.dart';
+import 'package:umkm_bri/screens/starter/starter_screen.dart';
 
 import 'screens/sign_up/sign_up_screen.dart';
 
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
+  StarterScreen.routeName: (context) => const StarterScreen(),
   SplashScreen.routeName: (context) => SplashScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
   ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),

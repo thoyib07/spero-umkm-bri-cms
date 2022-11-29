@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
 class Body extends StatelessWidget {
+  GetStorage box = GetStorage();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -11,6 +13,8 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           ProfilePic(),
+          SizedBox(height: 10),
+          Text("Hi, ${box.read('name')}"),
           SizedBox(height: 20),
           ProfileMenu(
             text: "My Account",
