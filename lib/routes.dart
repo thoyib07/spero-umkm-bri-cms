@@ -5,6 +5,7 @@ import 'package:umkm_bri/screens/details/details_screen.dart';
 import 'package:umkm_bri/screens/forgot_password/forgot_password_screen.dart';
 import 'package:umkm_bri/screens/home/home_screen.dart';
 import 'package:umkm_bri/screens/login_success/login_success_screen.dart';
+import 'package:umkm_bri/screens/order_success/order_success_screen.dart';
 import 'package:umkm_bri/screens/otp/otp_screen.dart';
 import 'package:umkm_bri/screens/profile/profile_screen.dart';
 import 'package:umkm_bri/screens/sign_in/sign_in_screen.dart';
@@ -26,6 +27,7 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => OtpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
+  OrderSuccessScreen.routeName: (context) => OrderSuccessScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
 };

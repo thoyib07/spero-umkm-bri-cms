@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:umkm_bri/models/Product.dart';
+import 'package:umkm_bri/models/ProductMap.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -12,7 +12,7 @@ class ProductDescription extends StatelessWidget {
     this.pressOnSeeMore,
   }) : super(key: key);
 
-  final Product product;
+  final ProductMap product;
   final GestureTapCallback? pressOnSeeMore;
 
   @override

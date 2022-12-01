@@ -2,15 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:umkm_bri/models/Product.dart';
 import 'package:umkm_bri/models/Product.dart';
 import 'package:umkm_bri/screens/details/details_screen.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
+class ProductCardSecond extends StatelessWidget {
+  const ProductCardSecond({
     Key? key,
     this.width = 140,
     this.aspectRetio = 1.02,

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:umkm_bri/components/default_button.dart';
-import 'package:umkm_bri/models/Product.dart';
+// import 'package:umkm_bri/models/Product.dart';
+import 'package:umkm_bri/models/ProductMap.dart';
+import 'package:umkm_bri/service/order_service.dart';
 import 'package:umkm_bri/size_config.dart';
+import 'package:umkm_bri/service/http_service.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'color_dots.dart';
 import 'product_description.dart';
@@ -9,7 +13,7 @@ import 'top_rounded_container.dart';
 import 'product_images.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  final ProductMap product;
 
   const Body({Key? key, required this.product}) : super(key: key);
 
@@ -41,9 +45,10 @@ class Body extends StatelessWidget {
                           top: getProportionateScreenWidth(15),
                         ),
                         child: DefaultButton(
-                          text: "Pesan Sekarang",
-                          press: () {},
-                        ),
+                            text: "Pesan Sekarang",
+                            press: () async {
+                              await OrderService.process(product.id, context);
+                            }),
                       ),
                     ),
                   ],

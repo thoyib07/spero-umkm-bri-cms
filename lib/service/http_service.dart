@@ -10,9 +10,9 @@ class HttpService {
   static final _client = http.Client();
   // final box = GetStorage();
 
-  static var _loginUrl = Uri.parse('http://66.42.50.59/api/api/login');
+  static final _loginUrl = Uri.parse('http://66.42.50.59/api/login');
 
-  static var _registerUrl = Uri.parse('http://66.42.50.59/api/register');
+  static final _registerUrl = Uri.parse('http://66.42.50.59/api/register');
 
   static login(email, password, context) async {
     http.Response response = await http.post(_loginUrl, headers: {
@@ -21,6 +21,8 @@ class HttpService {
       "email": email,
       "password": password,
     });
+
+    print(response.statusCode);
 
     if (response.statusCode == 200) {
       print(jsonDecode(response.body));
