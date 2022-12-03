@@ -12,26 +12,50 @@ class Body extends StatelessWidget {
         width: double.infinity,
         child: Padding(
           padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(30)),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.19),
+                SizedBox(height: getProportionateScreenHeight(50)),
                 Text(
-                  "Selamat Datang",
+                  "UMKM BRI",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
+                    fontSize: getProportionateScreenWidth(40),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: getProportionateScreenHeight(10)),
+
                 Text(
-                  "Login dengan Username dan Password anda",
+                  "silahkan isi Username dan Password anda",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                Center(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Copyright ",
+                    ),
+                    Text(
+                      "BRI ",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 36, 112, 204),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text("| Developed by "),
+                    Text("PT Spero",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontWeight: FontWeight.bold))
+                  ],
+                )),
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.center,
                 //   children: [

@@ -2,7 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:umkm_bri/models/Product.dart';
+// import 'package:umkm_bri/models/Product.dart';
+import 'package:umkm_bri/models/ProductMap.dart';
 import 'package:umkm_bri/screens/details/details_screen.dart';
 
 import '../constants.dart';
@@ -17,7 +18,7 @@ class ProductCard extends StatelessWidget {
   }) : super(key: key);
 
   final double width, aspectRetio;
-  final Product product;
+  final ProductMap product;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +33,11 @@ class ProductCard extends StatelessWidget {
       child: SizedBox(
         width: getProportionateScreenWidth(width),
         child: GestureDetector(
-          // onTap: () => Navigator.pushNamed(
-          //   context,
-          //   DetailsScreen.routeName,
-          //   arguments: ProductDetailsArguments(product: product),
-          // ),
+          onTap: () => Navigator.pushNamed(
+            context,
+            DetailsScreen.routeName,
+            arguments: ProductDetailsArguments(product: product),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

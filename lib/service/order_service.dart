@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -26,17 +28,17 @@ class OrderService {
       "jmlh": "$counter"
     });
 
-    print(id);
-    print(idProduct);
-    print(counter);
-    print(response.body);
+    log(id);
+    log(idProduct.toString());
+    log(counter);
+    log(response.body);
 
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      log(jsonDecode(response.body));
       var json = jsonDecode(response.body);
 
       await EasyLoading.showSuccess("Pemesanan berhasil");
-      await Navigator.push(context,
+      await Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => OrderSuccessScreen()));
     } else {
       await EasyLoading.showError("Pemesanan gagal");

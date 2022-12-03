@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:umkm_bri/components/rounded_icon_btn.dart';
 import 'package:umkm_bri/models/ProductMap.dart';
@@ -30,7 +32,7 @@ class _PickerState extends State<Picker> {
         counter++;
         box.write('counter', counter);
       }
-      print(box.read('counter'));
+      log(box.read('counter'));
     });
   }
 
@@ -40,7 +42,7 @@ class _PickerState extends State<Picker> {
         counter--;
         box.write('counter', counter);
       }
-      print(box.read('counter'));
+      log(box.read('counter'));
     });
   }
 

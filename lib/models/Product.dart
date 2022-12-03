@@ -74,7 +74,7 @@ Future<List<Product>> funcGetProduct(int idUser) async {
   });
   List<Product> dataProducts = List<Product>.empty();
   if (response.statusCode == 200) {
-    print(jsonDecode(response.body));
+    log(jsonDecode(response.body));
     var json = jsonDecode(response.body)['data'];
     dynamic notesJson = json;
     for (dynamic noteJson in notesJson) {

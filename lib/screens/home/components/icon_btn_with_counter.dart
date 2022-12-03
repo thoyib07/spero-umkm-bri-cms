@@ -19,7 +19,7 @@ class IconBtnWithCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(100),
+      borderRadius: BorderRadius.circular(4),
       onTap: press,
       child: Stack(
         clipBehavior: Clip.none,
@@ -30,7 +30,8 @@ class IconBtnWithCounter extends StatelessWidget {
             width: getProportionateScreenWidth(46),
             decoration: BoxDecoration(
               color: kSecondaryColor.withOpacity(0.1),
-              shape: BoxShape.circle,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(4),
             ),
             child: SvgPicture.asset(svgSrc),
           ),
@@ -43,8 +44,9 @@ class IconBtnWithCounter extends StatelessWidget {
                 width: getProportionateScreenWidth(16),
                 decoration: BoxDecoration(
                   color: Color(0xFFFF4848),
-                  shape: BoxShape.circle,
-                  border: Border.all(width: 1.5, color: Colors.white),
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(4),
+                  // border: Border.all(width: 1.5, color: Colors.white),
                 ),
                 child: Center(
                   child: Text(

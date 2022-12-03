@@ -28,7 +28,8 @@ class Body extends StatelessWidget {
           child: DefaultButton(
             text: "Home",
             press: () {
-              Navigator.pushNamed(context, HomeScreen.routeName);
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
             },
           ),
         ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -22,10 +24,10 @@ class HttpService {
       "password": password,
     });
 
-    print(response.statusCode);
+    log(response.statusCode.toString());
 
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      log(jsonDecode(response.body).toString());
       var json = jsonDecode(response.body);
 
       // if (json[0] == 'success') {
@@ -34,8 +36,9 @@ class HttpService {
       box.write('email', json["data"]["email"]);
       box.write('name', json["data"]["name"]);
       box.write('id', json["data"]["id"]);
+      box.write('search', "");
       await EasyLoading.showSuccess("Login success");
-      await Navigator.push(context,
+      await Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => LoginSuccessScreen()));
       // } else {
       //   EasyLoading.showError(json[0]);

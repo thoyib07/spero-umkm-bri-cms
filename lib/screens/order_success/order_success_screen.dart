@@ -6,12 +6,16 @@ class OrderSuccessScreen extends StatelessWidget {
   static String routeName = "/login_success";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: SizedBox(),
-        title: Text("Order Berhasil"),
-      ),
-      body: Body(),
-    );
+    return WillPopScope(
+        onWillPop: () async {
+          return false;
+        },
+        child: Scaffold(
+          appBar: AppBar(
+            leading: SizedBox(),
+            title: Text("Order Berhasil"),
+          ),
+          body: Body(),
+        ));
   }
 }

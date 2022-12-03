@@ -10,7 +10,7 @@ import 'package:meta/meta.dart';
 import '../../../size_config.dart';
 import 'categories.dart';
 // import 'discount_banner.dart';
-import 'home_header.dart';
+import 'search_header.dart';
 import 'popular_product.dart';
 import 'product_second.dart';
 import 'section_title.dart';
@@ -69,7 +69,7 @@ class _BodyState extends State<Body> {
           .map((e) => ProductMapDefine.fromJson(e))
           .toList();
     } else {
-      throw Exception("Failed to load cat fact!");
+      throw Exception("Failed to load data!");
     }
   }
 
@@ -80,7 +80,6 @@ class _BodyState extends State<Body> {
         child: Column(
           children: [
             SizedBox(height: getProportionateScreenWidth(20)),
-            HomeHeader(),
             Categories(),
             SizedBox(height: getProportionateScreenWidth(10)),
             Column(

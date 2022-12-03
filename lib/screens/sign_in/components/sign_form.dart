@@ -27,17 +27,19 @@ class _SignFormState extends State<SignForm> {
   final List<String?> errors = [];
 
   void addError({String? error}) {
-    if (!errors.contains(error))
+    if (!errors.contains(error)) {
       setState(() {
         errors.add(error);
       });
+    }
   }
 
   void removeError({String? error}) {
-    if (errors.contains(error))
+    if (errors.contains(error)) {
       setState(() {
         errors.remove(error);
       });
+    }
   }
 
   @override
@@ -50,29 +52,30 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
-          Row(
-            children: [
-              Checkbox(
-                value: remember,
-                activeColor: kPrimaryColor,
-                onChanged: (value) {
-                  setState(() {
-                    remember = value;
-                  });
-                },
-              ),
-              Text("Remember me"),
-              Spacer(),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, ForgotPasswordScreen.routeName),
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline),
-                ),
-              )
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Checkbox(
+          //       value: remember,
+          //       activeColor: kPrimaryColor,
+          //       onChanged: (value) {
+          //         setState(() {
+          //           remember = value;
+          //         });
+          //       },
+          //     ),
+          //     Text("Remember me"),
+          //     Spacer(),
+          //     GestureDetector(
+          //       onTap: () => Navigator.pushNamed(
+          //           context, ForgotPasswordScreen.routeName),
+          //       child: Text(
+          //         "Forgot Password",
+          //         style: TextStyle(decoration: TextDecoration.underline),
+          //       ),
+          //     )
+          //   ],
+          // ),
+
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
@@ -83,8 +86,8 @@ class _SignFormState extends State<SignForm> {
                 // final prefs = await SharedPreferences.getInstance();
                 // prefs.setBool('loggedIn', true);
                 // onTap: () async {
-                print(password);
-                print(email);
+                log(password.toString());
+                log(email.toString());
                 KeyboardUtil.hideKeyboard(context);
                 await HttpService.login(email, password, context);
 
