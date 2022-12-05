@@ -32,7 +32,6 @@ class _PickerState extends State<Picker> {
         counter++;
         box.write('counter', counter);
       }
-      log(box.read('counter'));
     });
   }
 
@@ -42,7 +41,6 @@ class _PickerState extends State<Picker> {
         counter--;
         box.write('counter', counter);
       }
-      log(box.read('counter'));
     });
   }
 

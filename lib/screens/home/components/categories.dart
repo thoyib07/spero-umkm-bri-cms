@@ -24,6 +24,7 @@ class Categories extends StatelessWidget {
             icon: categories[index]["icon"],
             text: categories[index]["text"],
             press: () {},
+            id: null,
           ),
         ),
       ),
@@ -37,9 +38,11 @@ class CategoryCard extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.press,
+    this.value = "",
+    this.id = "",
   }) : super(key: key);
 
-  final String? icon, text;
+  final String? icon, text, id, value;
   final GestureTapCallback press;
 
   @override
@@ -55,16 +58,25 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(55),
               width: getProportionateScreenWidth(55),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 223, 245, 255),
+                color: value == id
+                    ? Color.fromARGB(255, 74, 155, 225)
+                    : Color.fromARGB(255, 153, 214, 245),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: SvgPicture.asset(icon!),
+              child: SvgPicture.asset(icon!,
+                  color: value == id
+                      ? Color.fromARGB(255, 255, 255, 255)
+                      : Color.fromARGB(248, 255, 255, 255)),
             ),
             SizedBox(height: 5),
             Text(
               text!,
               textAlign: TextAlign.center,
-              // style: TextStyle(fontSize: 12),
+              style: TextStyle(
+                  fontSize: 10,
+                  color: value == id
+                      ? Color.fromARGB(255, 255, 144, 89)
+                      : Color.fromARGB(248, 86, 86, 86)),
             )
           ],
         ),

@@ -36,6 +36,7 @@ class HttpService {
       box.write('email', json["data"]["email"]);
       box.write('name', json["data"]["name"]);
       box.write('id', json["data"]["id"]);
+      box.write('notif', json["notif"]["notif"]);
       box.write('search', "");
       await EasyLoading.showSuccess("Login success");
       await Navigator.pushReplacement(context,
