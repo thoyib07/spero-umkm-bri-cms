@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:umkm_bri/components/default_button.dart';
 import 'package:umkm_bri/screens/home/home_screen.dart';
+import 'package:umkm_bri/service/send_notif.dart';
 import 'package:umkm_bri/size_config.dart';
+import 'package:umkm_bri/service/order_service.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -26,13 +28,15 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: "Home",
-            press: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
-              ;
-            },
-          ),
+              text: "Home",
+              // press: () {
+              //   Navigator.pushReplacement(context,
+              //       MaterialPageRoute(builder: (context) => HomeScreen()));
+              //   ;
+              // },
+              press: () async {
+                await SendNotif.process(context);
+              }),
         ),
         Spacer(),
       ],

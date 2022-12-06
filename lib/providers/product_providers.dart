@@ -11,15 +11,15 @@ import '../service/product_service.dart';
 
 class ProductProviders with ChangeNotifier {
   List<ProductMap> _productMap = [];
-  List<HistoryTrans> _historyTrans = [];
+  // List<HistoryTrans> _historyTrans = [];
   // int? countNotif = 0;
 
   List<ProductMap> get products => _productMap;
-  List<HistoryTrans> get historyTrans => _historyTrans;
+  // List<HistoryTrans> get historyTrans => _historyTrans;
 
   set products(List<ProductMap> products) {
     _productMap = products;
-    _historyTrans = historyTrans;
+    // _historyTrans = historyTrans;
     notifyListeners();
   }
 
@@ -59,15 +59,15 @@ class ProductProviders with ChangeNotifier {
     }
   }
 
-  fetchHistoryTrans() async {
-    try {
-      List<HistoryTrans> historyTrans =
-          await ProductService().fetchHistoryTrans();
-      _historyTrans = historyTrans;
-      log(_historyTrans.toString());
-      notifyListeners();
-    } catch (e) {
-      log(e.toString());
-    }
-  }
+  // fetchHistoryTrans() async {
+  //   try {
+  //     List<HistoryTrans> historyTrans =
+  //         await ProductService().fetchHistoryTrans();
+  //     _historyTrans = historyTrans;
+  //     log(_historyTrans.toString());
+  //     notifyListeners();
+  //   } catch (e) {
+  //     log(e.toString());
+  //   }
+  // }
 }

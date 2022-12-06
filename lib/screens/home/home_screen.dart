@@ -2,12 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:umkm_bri/models/HistoryTrans.dart';
 import 'package:umkm_bri/providers/product_providers.dart';
 import 'package:umkm_bri/screens/home/components/drawer_card.dart';
 import 'package:umkm_bri/screens/home/components/icon_btn_with_counter.dart';
+import 'package:umkm_bri/screens/profile/profile_screen.dart';
 // import 'package:umkm_bri/screens/profile/profile_screen.dart';
 import '../../../size_config.dart';
 import 'components/categories.dart';
@@ -29,10 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
   late ProductProviders productProviders;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   String? Categories;
+  int? trigCategories;
   @override
   void initState() {
     super.initState();
     Categories = "";
+    trigCategories = 0;
+    // productProviders.getProducts();
   }
 
   // Timer mytimer = Timer.periodic(const Duration(seconds: 5), (timer) {});
@@ -40,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
     productProviders = Provider.of<ProductProviders>(context);
-    if (box.read('search') == "" && Categories == "") {
+    if (box.read('search') == "") {
       productProviders.getProducts();
     }
     super.didChangeDependencies();
@@ -50,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (box.read('search') != "") {
       await productProviders.getProductsByKeyword(dataSearch);
     } else {
+      log("tedt");
       productProviders.getProducts();
     }
   }
@@ -122,17 +128,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      // IconBtnWithCounter(
-                                      //   svgSrc: "assets/icons/User.svg",
-                                      //   press: () => Navigator.pushNamed(
-                                      //       context, ProfileScreen.routeName),
-                                      // ),
-                                      // const SizedBox(width: 10),
                                       IconBtnWithCounter(
                                         svgSrc: "assets/icons/Bell.svg",
                                         numOfitem: box.read("notif"),
                                         press: () {
                                           _key.currentState!.openEndDrawer();
+                                        },
+                                      ),
+                                      const SizedBox(width: 10),
+                                      IconBtnWithCounter(
+                                        svgSrc:
+                                            "assets/icons/logout-svgrepo-com.svg",
+                                        press: () {
+                                          SystemNavigator.pop();
                                         },
                                       ),
                                     ],

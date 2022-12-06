@@ -4,8 +4,8 @@ import 'package:umkm_bri/components/default_button.dart';
 import 'package:umkm_bri/models/ProductMap.dart';
 import 'package:umkm_bri/service/order_service.dart';
 import 'package:umkm_bri/size_config.dart';
-import 'package:umkm_bri/service/http_service.dart';
-import 'package:get_storage/get_storage.dart';
+// import 'package:umkm_bri/service/http_service.dart';
+// import 'package:get_storage/get_storage.dart';
 
 import 'color_dots.dart';
 import 'product_description.dart';
